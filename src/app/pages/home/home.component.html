@@ -1,0 +1,36 @@
+<div class="content">
+  <app-landing [isEditable]="isEditable"></app-landing>
+
+  <app-card
+    title="Experiencia"
+    [isEditable]="isEditable"
+    [columns]="experienceColumns"
+    [items]="sections.experience.items"
+    (onCreate)="createItem($event, 'experience')"
+    (onDelete)="deleteItem($event, 'experience')"
+    (onEdit)="editItem($event, 'experience')"
+  ></app-card>
+
+  <app-card
+    title="Educación"
+    [isEditable]="isEditable"
+    [columns]="educationColumns"
+    [items]="sections.education.items"
+    (onCreate)="createItem($event, 'experience')"
+    (onDelete)="deleteItem($event, 'education')"
+    (onEdit)="editItem($event, 'education')"
+  ></app-card>
+
+  <app-skill [skills]="sections.skill.items" [isEditable]="isEditable"></app-skill>
+
+  <app-card
+    title="Proyectos"
+    [isEditable]="isEditable"
+    [columns]="projectColumns"
+    [items]="sections.project.items"
+    (onCreate)="createItem($event, 'project')"
+    (onDelete)="deleteItem($event, 'project')"
+    (onEdit)="editItem($event, 'project')"
+  ></app-card>
+
+</div>

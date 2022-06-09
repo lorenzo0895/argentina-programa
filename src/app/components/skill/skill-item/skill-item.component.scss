@@ -1,0 +1,31 @@
+.skill-div {
+  position: relative;
+  svg {
+    circle {
+      fill: none;
+      &.bg {
+        stroke: #e3e3e3;
+      }
+      &.progress {
+        stroke-linecap: round;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+      }
+    }
+  }
+  span {
+    margin: 0 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .edit-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

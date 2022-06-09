@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{ data?.title }}</h1>
+<div mat-dialog-content>
+  <p>{{ data?.message }}</p>
+  <form *ngIf="formGroup" [formGroup]="formGroup">
+    <ng-container *ngFor="let column of columns; let i = index">
+      <mat-form-field *ngIf="column.isVisible" appearance="outline" class="block">
+        <mat-label>{{ column.shownName }}</mat-label>
+        <input
+          matInput
+          [formControlName]="column.key"
+          [value]="formGroup.get(column.key)?.value"
+          [type]="column.type ?? 'text'"
+        />
+      </mat-form-field>
+    </ng-container>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <ng-template [ngIf]="true">
+    <button mat-button (click)="close()">{{ data?.cancelText ?? 'Cancel' }}</button>
+    <button mat-button (click)="confirm()" cdkFocusInitial>
+      {{ data?.confirmText ?? 'Confirm' }}
+    </button>
+  </ng-template>
+</div>

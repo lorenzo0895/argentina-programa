@@ -1,0 +1,11 @@
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+.content {
+  padding: 80px 0 50px 0;
+  width: clamp(100px, 90%, 1000px);
+  margin: auto;
+}

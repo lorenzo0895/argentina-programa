@@ -1,0 +1,21 @@
+.container {
+  padding: 30px;
+  .item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    .dates {
+      color: rgb(120, 120, 120);
+    }
+  }
+  .item-mock {
+    & > * {
+      margin-bottom: 10px;
+    }
+    .editable {
+      .title-skeleton {
+        margin-top: 8px;
+      }
+    }
+  }
+}

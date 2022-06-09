@@ -1,0 +1,20 @@
+<ng-container *ngFor="let item of items; let i = index">
+  <div class="item">
+    <ng-container *ngFor="let column of columns">
+      <h3 *ngIf="column?.isTitle" class="editable">
+        {{ item[column.key] }}
+        <div *ngIf="isEditable" class="buttons-div">
+          <app-round-button class="edit-text" type="edit" (click)="editItem(item)"></app-round-button>
+          <app-round-button class="edit-text" type="delete" (click)="deleteItem(item.id ?? '')"></app-round-button>
+        </div>
+      </h3>
+    </ng-container>
+    <ng-container *ngFor="let column of columns">
+      <p *ngIf="!column.isTitle && column.isVisible && column.type !== 'date'">{{ item[column.key] }}</p>
+      <p *ngIf="!column.isTitle && column.isVisible && column.type === 'date'">
+        {{ column.shownName }}: {{ item[column.key] ? (item[column.key] | date: 'MM/yy') : 'ACT' }}
+      </p>
+    </ng-container>
+  </div>
+  <hr *ngIf="i < items.length - 1" />
+</ng-container>

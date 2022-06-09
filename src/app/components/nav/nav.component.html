@@ -1,0 +1,13 @@
+<nav>
+  <div>
+    <img src="../../../assets/logo.png" alt="logo" class="logo" routerLink="/">
+    <ul>
+      <li class="network"><a href="https://www.facebook.com/LorenzoSpallione/" target="_blank"><img src="../../../assets/icons/facebook.svg" alt="fb"></a></li>
+      <li class="network"><a href="https://github.com/lorenzo0895" target="_blank"><img src="../../../assets/icons/github.svg" alt="fb"></a></li>
+      <li class="network"><a href="https://www.instagram.com/lorenzospallione/" target="_blank"><img src="../../../assets/icons/instagram.svg" alt="fb"></a></li>
+      <li class="network"><a href="https://twitter.com/lorenzo0895" target="_blank"><img src="../../../assets/icons/twitter.svg" alt="fb"></a></li>
+      <li *ngIf="activeRoute() !== '/login' && !isLogged"><button mat-raised-button routerLink="/login">Login</button></li>
+      <li *ngIf="isLogged"><button mat-raised-button (click)="logOut()">Cerrar sesión</button></li>
+    </ul>
+  </div>
+</nav>

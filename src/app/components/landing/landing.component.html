@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="landing">
+    <app-round-button *ngIf="isEditable" class="edit-landing-photo" type="edit"></app-round-button>
+    <img
+      [src]="landingImage"
+      alt="landing"
+    />
+    <div class="profile-div">
+      <div class="profile-photo">
+        <img
+          [src]="profileImage"
+          alt="profile"
+        />
+      </div>
+      <app-round-button *ngIf="isEditable" class="edit-profile-photo" type="edit"></app-round-button>
+    </div>
+  </div>
+  <div class="content">
+    <h1 class="editable">
+      Lorenzo Spallione
+      <div class="buttons-div" *ngIf="isEditable">
+        <app-round-button class="edit-text" type="edit"></app-round-button>
+      </div>
+    </h1>
+    <h2>Full Stack Web Developer</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis natus veritatis odit sequi ullam minima perferendis nobis, magnam labore dolore ea aliquid culpa corrupti placeat! Earum aspernatur suscipit cupiditate consequatur!</p>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="editable">
+    <h2>{{ title }}</h2>
+    <div class="buttons-div" *ngIf="isEditable">
+      <app-round-button type="add" (click)="createItem()"></app-round-button>
+    </div>
+  </div>
+
+  <app-card-content
+    [items]="items"
+    [columns]="columns"
+    [isEditable]="isEditable"
+    (onDelete)="deleteItem($event)"
+    (onEdit)="editItem($event)"
+  ></app-card-content>
+
+</div>

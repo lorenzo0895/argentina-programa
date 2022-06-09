@@ -1,0 +1,26 @@
+<div class="skill-div">
+  <svg [attr.width]="width+stroke" [attr.height]="width+stroke">
+    <circle
+      class="bg"
+      [attr.stroke-width]="stroke"
+      [attr.cx]="(width+stroke)/2"
+      [attr.cy]="(width+stroke)/2"
+      [attr.r]="width/2"
+    />
+    <circle
+      class="progress"
+      [attr.stroke]="strokeColor"
+      [attr.stroke-width]="stroke"
+      [attr.cx]="(width+stroke)/2"
+      [attr.cy]="(width+stroke)/2"
+      [attr.r]="width/2"
+      [attr.stroke-dasharray]="3.1416*width"
+      [attr.stroke-dashoffset]="(3.1416*width)-((3.1416*width)*status/100)"
+    />
+  </svg>
+  <span>{{text}}</span>
+  <div class="edit-button" *ngIf="isEditable">
+    <app-round-button *ngIf="!isMock" type="edit"></app-round-button>
+    <app-round-button *ngIf="isMock" type="add" backgroundColor="#b8b8b8"></app-round-button>
+  </div>
+</div>

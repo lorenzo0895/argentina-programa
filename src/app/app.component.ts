@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IException } from './components/models/IException';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'argentina-programa';
+
+  prueba: IException = {error: 'pruebaaa'};
+
+  constructor(private authService: AuthService) {
+    this.authService.authMe().subscribe();
+  }
+
 }
